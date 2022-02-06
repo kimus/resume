@@ -1,0 +1,69 @@
+{
+  "title": "Bulma Resume Example",
+
+  "theme": "dark",
+
+  "themes": {
+    "dark": {
+      "theme-color": "#2E8BC0",
+      "thin-color": "#333"
+    },
+    "light": {
+      "theme-color": "#bd93f9",
+      "thin-color": "#b5b5b5"
+    }
+  },
+
+  "profile": {
+    "name": "Helder Rossa",
+    "title": "Head of Tech and Lead Architect at EatTasty",
+    "photo": "https://i.pravatar.cc/400?img=11",
+    "city": "Sesimbra, Portugal",
+    "phone": "(+351) 933 433 362",
+    "mail": "helder.rossa@gmail.com"
+  },
+
+  "social": {
+    "facebook": {
+      "name": "helder.rossa",
+      "link": "https://web.facebook.com/helder.rossa"
+    },
+    "twitter": {
+      "name": "@helderrossa",
+      "link": "https://twitter.com/helderrossa"
+    },
+    "linkedin": {
+      "name": "in/helderrossa",
+      "link": "https://linkedin.com/in/helderrossa"
+    },
+    "github": {
+      "name": "kimus",
+      "link": "https://github.com/kimus"
+    }
+  },
+
+  "educations": [{
+    "name": "Muhammadiyah University",
+    "city": "Jakarta",
+    "degree": "Bachelor Degree",
+    "period": "2009 - 2013",
+    "faculty": "Bachelor of Informatics Engineering"
+  }],
+
+  "projects": [{
+    "title": "AAAAA",
+    "company": "AAAAA",
+    "period": "JUL 2018 - JUN 2019"
+  }],
+
+  "skills": [
+    { "name": "JavaScript", "progress": 90 },
+    { "name": "Java", "progress": 70 },
+    { "name": "C#", "progress": 60 }
+  ],
+
+  "languages": [
+    { "language": "Portuguese", "level": "Native" },
+    { "language": "English", "level": "Good" }
+  ]
+}

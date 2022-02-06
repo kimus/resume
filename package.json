@@ -1,0 +1,44 @@
+{
+  "name": "eleventy-resume-template",
+  "version": "1.0.0",
+  "description": "Free resume page template with bulma css",
+  "scripts": {
+    "build:sass": "node-sass --omit-source-map-url --importer node_modules/node-sass-magic-importer/dist/cli.js assets/scss -o dist/css",
+    "build:eleventy": "npx dotenv-flow -- eleventy",
+    "watch:sass": "npm run build:sass -- --watch",
+    "watch:eleventy": "npx dotenv-flow -- eleventy --watch --serve",
+    "clean:dist": "rimraf dist",
+    "dev": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:*",
+    "clean": "npm-run-all clean:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimus/eleventy-resume-template.git"
+  },
+  "keywords": [
+    "bulma",
+    "css-template",
+    "resume-template",
+    "resume-website"
+  ],
+  "author": "Helder Rossa <github.com/kimus>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kimus/eleventy-resume-template/issues"
+  },
+  "homepage": "https://github.com/kimus/eleventy-resume-template#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "bulma": "^0.9.3",
+    "bulma-dracula": "^1.1.1",
+    "bulma-extensions": "^6.2.7",
+    "cross-env": "^7.0.3",
+    "dotenv-flow": "^3.2.0",
+    "dotenv-flow-cli": "^1.0.0",
+    "node-sass": "^7.0.1",
+    "node-sass-magic-importer": "^5.3.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2"
+  }
+}

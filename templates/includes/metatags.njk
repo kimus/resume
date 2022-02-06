@@ -1,0 +1,33 @@
+<meta name="robots" content="index, follow" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=7" />
+
+<meta name="language" content="en-EN" />
+<meta name="author" content="{{ pkg.author }}" />
+<title>{{ config.title }}</title>
+<meta name="description" content="{{ pkg.description }} by {{ pkg.author }}" />
+
+<meta property="og:title" content="{{ config.title }}" />
+<meta property="og:description" content="{{ pkg.description }} by {{ pkg.author }}" />
+
+<meta name="twitter:title" content="{{ config.title }}" />
+<meta name="twitter:description" content="{{ pkg.description }} by {{ pkg.author }}" />
+
+<link rel="icon" type="image/png" sizes="16x16" href="https://mazipan.github.io/favicon/favicon-16x16.png" />
+<meta name="theme-color" content="{{ config.themes[config.theme]['theme-color'] }}" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com/css?family=Raleway" />
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/css?family=Raleway" />
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Raleway" as="style"
+	onload="this.onload=null;this.rel='stylesheet'" />
+<noscript>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+</noscript>
+
+<style>
+:root {
+  --theme-color: {{ config.themes[config.theme]['theme-color'] }};
+  --thin-color: {{ config.themes[config.theme]['thin-color'] }};
+}
+</style>
