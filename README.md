@@ -9,7 +9,8 @@ I created this template as managing a resume a word processor, or other publishi
 
 
 # Roadmap
-[x] initial dark and light themes
-[ ] multiple theme support
-[ ] PDF output generation
-[ ] GitHub Actions
+
+- [x] initial dark and light themes
+- [ ] multiple theme support
+- [ ] PDF output generation
+- [ ] GitHub Actions
