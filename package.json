@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Free resume page template with bulma css",
   "scripts": {
-    "build:sass": "node-sass --omit-source-map-url --importer node_modules/node-sass-magic-importer/dist/cli.js assets/scss -o dist/css",
+    "build:sass": "node-sass --omit-source-map-url --importer ./node_modules/node-sass-magic-importer/dist/cli.js assets/scss -o dist/css",
     "build:eleventy": "npx dotenv-flow -- eleventy",
     "watch:sass": "npm run build:sass -- --watch",
     "watch:eleventy": "npx dotenv-flow -- eleventy --watch --serve",

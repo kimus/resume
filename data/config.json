@@ -3,6 +3,10 @@
 
   "theme": "dark",
 
+  "options": {
+    "education": false
+  },
+
   "themes": {
     "dark": {
       "theme-color": "#2E8BC0",
@@ -17,10 +21,10 @@
   "profile": {
     "name": "Helder Rossa",
     "title": "Head of Tech and Lead Architect at EatTasty",
-    "photo": "https://i.pravatar.cc/400?img=11",
+    "photo": "https://res.cloudinary.com/kimus/image/upload/c_thumb,g_face,w_200/v1644274149/personal/avatar.png",
     "city": "Sesimbra, Portugal",
     "phone": "(+351) 933 433 362",
-    "mail": "helder.rossa@gmail.com"
+    "mail": "helder@rossa.eu.org"
   },
 
   "social": {
@@ -42,13 +46,36 @@
     }
   },
 
-  "educations": [{
-    "name": "Muhammadiyah University",
-    "city": "Jakarta",
-    "degree": "Bachelor Degree",
-    "period": "2009 - 2013",
-    "faculty": "Bachelor of Informatics Engineering"
-  }],
+  "educations": [
+      {
+      "name": "ORACLE",
+      "city": "Lisbon",
+      "degree": "Curso de administração da base de dados Oracle SQL Server na plataforma Unix (Application Server)",
+      "period": "2000",
+      "faculty": "Curso de Administração e Backup and Recovery para Parceiros (Oracle SQL Server)\nCurso de Programação Java com JDeveloper\nCurso de Desenvolvimento de aplicações de base de dados com Java."
+    },
+    {
+      "name": "IBM",
+      "city": "Lisbon",
+      "degree": "Curso de WebSphere Business Components",
+      "period": "2000",
+      "faculty": "Java servlets, JavaBean components, JavaServer Page components, Enterprise JavaBean components."
+    },
+    {
+      "name": "CESAE - Centro de Serviços e Apoio às Empresas",
+      "city": "Lisbon",
+      "degree": "Curso Técnico de CAD/CAM",
+      "period": "1997",
+      "faculty": "Estágio na Mundisoft, em Setúbal (Grupo Sttei)\nAutoCAD, 3D Studio Max, QBasic, Visual Basic, LISP e AutoLISP"
+    },
+    {
+      "name": "",
+      "city": "Lisbon",
+      "degree": "Curso de Artes Plásticas, Arquitectura e Design",
+      "period": "1992 - 1995",
+      "faculty": ""
+    }
+  ],
 
   "projects": [{
     "title": "AAAAA",
@@ -56,11 +83,47 @@
     "period": "JUL 2018 - JUN 2019"
   }],
 
-  "skills": [
-    { "name": "JavaScript", "progress": 90 },
-    { "name": "Java", "progress": 70 },
-    { "name": "C#", "progress": 60 }
-  ],
+  "skills": {
+    "Frontend": [
+      { "name": "React / React Native", "progress": 75 },
+      { "name": "jQuery", "progress": 90 },
+      { "name": "Twitter Bootstrap", "progress": 80 },
+      { "name": "Tailwind CSS", "progress": 70 },
+      { "name": "Bulma", "progress": 60 }
+    ],
+    "Backend": [
+      { "name": "Node JS", "progress": 80 },
+      { "name": "Django", "progress": 60 },
+      { "name": "ASP.NET", "progress": 60 },
+      { "name": "Spring Boot / Java EE", "progress": 60 }
+    ],
+    "languages": [
+      { "name": "JavaScript / TypeScript", "progress": 95 },
+      { "name": "Java", "progress": 70 },
+      { "name": "C#", "progress": 60 },
+      { "name": "Python", "progress": 60 },
+      { "name": "PHP", "progress": 60 }
+    ],
+    "databases, cache and queues": [
+      { "name": "MongoDB", "progress": 80 },
+      { "name": "PostgreSQL", "progress": 70 },
+      { "name": "MySQL", "progress": 60 },
+      { "name": "Oracle", "progress": 60 },
+      { "name": "SQL Server", "progress": 60 },
+      { "name": "Redis", "progress": 60 },
+      { "name": "Rabbit MQ", "progress": 60 }
+    ],
+    "infraestructure": [
+      { "name": "Docker", "progress": 80 },
+      { "name": "Jenkins", "progress": 70 },
+      { "name": "Maven", "progress": 70 },
+      { "name": "Gitlab Pipelines", "progress": 60 },
+      { "name": "GitHub Actions", "progress": 60 },
+      { "name": "Kubernetes", "progress": 40 },
+      { "name": "Ansible", "progress": 40 },
+      { "name": "Terraform", "progress": 40 }
+    ]
+  },
 
   "languages": [
     { "language": "Portuguese", "level": "Native" },

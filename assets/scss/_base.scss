@@ -1,6 +1,6 @@
 body {
   font-family: 'Raleway', sans-serif;
-}
+} 
 
 .has-background-primary, .is-primary:not(.progress) {
   background-color: var(--theme-color) !important;
@@ -79,7 +79,11 @@ body {
       border: none;
       padding-left: 0;
       padding-right: 0;
-  }
+
+      &:nth-child(2) {
+        width: 50%;
+      }
+  } 
 }
 
 .social-icon {
@@ -119,5 +123,20 @@ body {
 @media screen and (min-width: 768px) {
   .has-text-right-in-desktop {
     text-align: right;
+  }
+}
+
+@media print {
+  // article:not(:nth-of-type(1)) { page-break-inside: avoid; }
+
+  @page {
+    background-color: var(--theme-color) !important;
+  }
+}
+
+@media print and (color) {
+  * {
+     -webkit-print-color-adjust: exact;
+     print-color-adjust: exact;
   }
 }

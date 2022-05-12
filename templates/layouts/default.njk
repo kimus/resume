@@ -13,18 +13,20 @@
 		<div class="container">
 			<div class="columns">
 				<div class="column is-two-fifths">
-					<h1 class="title is-size-2">{{ config.profile.name }}</h1>
-					<p class="subtitle">{{ config.profile.title }}</p>
+					<h1 class="title is-size-5">{{ config.profile.name }}</h1>
+					<p class="subtitle is-size-7">{{ config.profile.title }}</p>
 				</div>
 				<div class="column is-2">
-					<figure class="image image is-128x128">
+					<figure class="image image is-96x96">
 						<img alt="Profile photo" class="is-rounded" src="{{ config.profile.photo }}" />
 					</figure>
 				</div>
 				<div class="column has-text-grey-light has-text-right-in-desktop">
-					<p class="has-text-weight-light">{{ config.profile.city }}</p>
-					<p class="has-text-weight-light">{{ config.profile.phone }}</p>
-					<p class="has-text-weight-light">{{ config.profile.mail }}</p>
+					<div>
+						<p class="has-text-weight-light social-icon">{{ config.profile.city }}</p>
+						<p class="has-text-weight-light social-icon">{{ config.profile.phone }}</p>
+						<p class="has-text-weight-light social-icon">{{ config.profile.mail }}</p>
+					</div>
 					{% include "social-icons.njk" %}
 				</div>
 			</div>
@@ -38,9 +40,9 @@
 			<div class="columns">
 				<div class="column">
 					<section class="summary pb-5">
-						<div class="title is-size-5 has-text-primary has-text-weight-bold">ABOUT ME</div>
+						<div class="title is-size-7 has-text-primary has-text-weight-bold">ABOUT ME</div>
             {%- for about in collections.about -%}
-              <div class="content">{{ about.templateContent | safe }}</div>
+              <div class="content is-size-7">{{ about.templateContent | safe }}</div>
             {%- endfor -%}
 					</section>
 				</div>
@@ -55,11 +57,11 @@
 			<div class="columns">
 				<div class="column is-two-thirds">
 					<section class="experience">
-						<h2 class="title is-size-5 has-text-primary has-text-weight-bold">EXPERIENCE</h2>
+						<h2 class="title is-size-7 has-text-primary has-text-weight-bold">EXPERIENCE</h2>
 
             {%- for experience in collections.experience | reverse -%}
             <article class="item pb-6">
-              <h3 class="is-size-4">
+              <h3 class="is-size-5">
                 <strong>{{ experience.data.company }}</strong>
 								{% if experience.data.location %}
                 <span class="is-size-5 has-text-weight-semi-bold">
@@ -67,70 +69,61 @@
                 </span>
 								{% endif %}
               </h3>
-              <div class="is-size-7 tag is-primary">{{ experience.data.period }}</div>
-              <div class="content">
+              <div class="is-size-8 tag is-primary">{{ experience.data.period }}</div>
+              <div class="content is-size-7">
               {{ experience.templateContent | safe }}
               </div>
 						</article>
             {%- endfor -%}
           </section>
 
+					{% if config.options.education %}
 					<section class="education">
-						<h2 class="title is-size-5 has-text-primary has-text-weight-bold">EDUCATION</h2>
+						<h2 class="title is-size-7 has-text-primary has-text-weight-bold">EDUCATION</h2>
 
 						{% for education in config.educations %}
 						<div class="item">
-							<div class="is-size-5">
-								<strong>{{ education.name }}</strong>,
-								<span class="has-text-weight-semi-bold">
-									{{ education.city }} — <i>{{ education.degree }}</i>
-								</span>
+							<div class="is-size-7">
+								<strong>{{ education.degree }}</strong>
+								{% if education.name %} - <i>{{ education.name }} <span class="has-text-weight-semi-bold">({{ education.city }})</span></i>{% endif %}
 							</div>
-							<div class="is-size-7 tag is-primary">{{ education.period }}</div>
+							<div class="is-size-8 tag is-primary">{{ education.period }}</div>
 							<div>{{ education.faculty }}</div>
 						</div>
 						{% endfor %}
 					</section>
+					{% endif %}
 				</div>
 
 				<div class="column">
+					{%- for note in collections.sidenote -%}
 					<section class="projects pb-6">
-						<h2 class="title is-size-5 has-text-primary has-text-weight-bold">PROJECTS</h2>
-
-						{% for proj in config.projects %}
+						<h2 class="title is-size-7 has-text-primary has-text-weight-bold">{{ note.data.title | upper }}</h2>
 						<div class="item">
-							<div class="is-size-5">
-								<strong>{{ proj.title }}</strong>
-								—
-								<i>{{ proj.company }}</i>
+							<div class="is-size-6 is-italic	">
+								<div class="content is-size-7">
+								{{ note.templateContent | safe }}
+								</div>
 							</div>
-							<div class="is-size-7 tag is-primary">{{ proj.period }}</div>
 						</div>
-						{% endfor %}
 					</section>
+					{% endfor %}
 
+					{% for key, items in config.skills %}
 					<section class="skills pb-6">
-						<h2 class="title is-size-5 has-text-primary has-text-weight-bold">SKILLS</h2>
+						<h2 class="title is-size-7 has-text-primary has-text-weight-bold">{{ key | upper }}</h2>
 						<div class="wrapper">
 							<table class="table is-fullwidth">
-							{% for skill in config.skills %}
+								{% for skill in items | sort(true, true, 'progress') %}
 							<tr>
-								<td>{{ skill.name }}</td>
-								<td><progress class="progress is-primary" value="{{ skill.progress }}" max="100">45%</progress></td>
+								<td class="is-one-third is-size-7">{{ skill.name }}</td>
+								<td class=""><progress class="progress is-primary" value="{{ skill.progress }}" max="100">45%</progress></td>
 							</tr>
 							{% endfor %}
 							</table>
 						</div>
 					</section>
-
-					<section class="languages pb-6">
-						<h2 class="title is-size-5 has-text-primary has-text-weight-bold">LANGUAGES</h2>
-						<div class="wrapper">
-							{% for l in config.languages %}
-							{{ l.language }}: {{ l.level }}<br>
-							{% endfor %}
-						</div>
-					</section>
+					{% endfor %}
 				</div>
 			</div>
 		</div>
